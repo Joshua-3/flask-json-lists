@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Elements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>JSON Elements</h1>
+    {% for element in elements %}
+        <div class="element">
+            <img src="{{ element.image }}" alt="{{ element.heading }}">
+            <div class="content">
+                <h2>{{ element.heading }}</h2>
+                <p>{{ element.description }}</p>
+                <a href="{{ element.link }}">Learn More</a>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>

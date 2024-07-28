@@ -21,12 +21,14 @@
                 <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
             </svg></button></div>
     <div style="height: 5vh;"></div>
-    <div class="element" style="border-right-color: rgb(145, 215, 227);"><img src="{{ elements.image }}" alt="{{ elements.heading }}">
-        <div class="content">
-            <h2 style="font-family: SFRounded;font-weight: bold;">{{ elements.heading }}</h2>
-            <p style="font-family: SFRounded;">{{ elements.description }}</p><a href="{{ elements.link }}" style="font-family: SFRounded;">Learn More</a>
+    {% for element in elements %}
+        <div class="element" style="border-right-color: rgb(145, 215, 227);"><img src="{{ element.image }}" alt="{{ element.heading }}">
+            <div class="content">
+                <h2 style="font-family: SFRounded;font-weight: bold;">{{ element.heading }}</h2>
+                <p style="font-family: SFRounded;">{{ element.description }}</p><a href="{{ element.link }}" style="font-family: SFRounded;">Learn More</a>
+            </div>
         </div>
-    </div>
+    {% endfor %}    
     <script src="./static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
